@@ -1,27 +1,33 @@
 # Hexlet Chat
 
-Упрощённый чат для команды: каналы, история сообщений, поиск и создание новых каналов.
+Учебный чат на React с сервером `@hexlet/chat-server`, REST API и Socket.IO.
 
-## Запуск
+## Требования
+
+- Node.js 22.12 или новее
+- npm
+- GNU Make для команд из `Makefile`
+
+## Локальный запуск
 
 ```bash
-npm install
-npm run dev
+make install
+make develop
 ```
 
-Откройте адрес, который покажет Vite (обычно `http://localhost:5173`). Для production-сборки используйте `npm run build`, для локального просмотра собранной версии — `npm run preview`.
+Откройте `http://localhost:5002`. Vite обслуживает клиент и проксирует REST API и Socket.IO на сервер `http://localhost:5001`.
 
-## Возможности
+## Production
 
-- Просмотр каналов и сообщений, поиск по текущему каналу.
-- Отправка сообщений клавишей Enter (Shift+Enter добавляет новую строку).
-- Создание канала и просмотр профиля.
-- Демо-данные и новые сообщения сохраняются в `localStorage` браузера.
+```bash
+make build
+make start
+```
+
+Сервер обслуживает собранный клиент из `dist` и API. Порт задаётся переменной окружения `PORT` (по умолчанию `5001`). Для Render Blueprint используется файл `render.yaml`.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/wswfws/react-urfu-project-12)
 
 ## Стек
 
-React, Vite, Mantine, Zustand, TanStack Query и `@mantine/form`.
-
-Серверный REST API и WebSocket в этой стартовой версии не подключены: адрес сервера и формат его API в исходном задании не указаны.
-
-Учебный проект Хекслета: https://ru.hexlet.io/
+React, Vite, Mantine, Zustand, TanStack Query, `@mantine/form`, Socket.IO и `@hexlet/chat-server`.

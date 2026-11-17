@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { MantineProvider, createTheme } from '@mantine/core';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import '@mantine/core/styles.css';
@@ -15,18 +13,20 @@ const theme = createTheme({
   },
 });
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: { staleTime: 30_000, refetchOnWindowFocus: false },
-  },
-});
+const init = async (socket) => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: { staleTime: 30_000, refetchOnWindowFocus: false, retry: false },
+    },
+  });
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  return (
     <MantineProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <App socket={socket} />
       </QueryClientProvider>
     </MantineProvider>
-  </React.StrictMode>,
-);
+  );
+};
+
+export default init;
