@@ -1,39 +1,27 @@
-# Чат (Slack)
+# Hexlet Chat
 
-[![hexlet-check](https://github.com/wswfws/react-urfu-project-12/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/wswfws/react-urfu-project-12/actions)
+Упрощённый чат для команды: каналы, история сообщений, поиск и создание новых каналов.
 
-Напишите real-time приложение на React, используя AJAX, REST, websockets, React (с хуками) + Zustand + TanStack Query + @mantine/form
+## Запуск
 
-Учебный проект Хекслета: https://ru.hexlet.io/
-Как это должно работать: https://files.hexlet.app/a/ose685
+```bash
+npm install
+npm run dev
+```
 
+Откройте адрес, который покажет Vite (обычно `http://localhost:5173`). Для production-сборки используйте `npm run build`, для локального просмотра собранной версии — `npm run preview`.
+
+## Возможности
+
+- Просмотр каналов и сообщений, поиск по текущему каналу.
+- Отправка сообщений клавишей Enter (Shift+Enter добавляет новую строку).
+- Создание канала и просмотр профиля.
+- Демо-данные и новые сообщения сохраняются в `localStorage` браузера.
 
 ## Стек
 
-- JavaScript
+React, Vite, Mantine, Zustand, TanStack Query и `@mantine/form`.
 
-## Установка
+Серверный REST API и WebSocket в этой стартовой версии не подключены: адрес сервера и формат его API в исходном задании не указаны.
 
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
-
-```bash
-git clone https://github.com/wswfws/react-urfu-project-12.git
-cd react-urfu-project-12
-```
-
-## Использование
-
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
-
----
-
-<details>
-<summary>Автоматические тесты Хекслета</summary>
-
-Тесты запускаются на каждый коммит. За запуск отвечает файл `.github/workflows/hexlet-check.yml` — не удаляйте и не переименовывайте ни его, ни репозиторий.
-
-</details>
-
-## О Хекслете
-
-[Хекслет](https://ru.hexlet.io/) — школа программирования: авторские программы обучения с практикой, поддержкой наставников и реальными проектами, которые остаются в резюме. Этот репозиторий — один из таких проектов.
+Учебный проект Хекслета: https://ru.hexlet.io/
